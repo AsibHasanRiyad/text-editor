@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount MS Word</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/9b7e7b98dc.js" crossorigin="anonymous"></script>
+</head>
+<body class=" mt-8 bg-cyan-100">
+    <div class="mb-3">
+        <h1 class="text-center text-emerald-600 text-4xl mb-4 font-bold">My Text Editor</h1>
+   <div class="flex justify-center">
+    <hr style="width: 75%;height: 5px; background-color: rgb(0, 0, 0);">
+   </div>
+    </div>
+    <section class="w-[75%] mx-auto grid grid-cols-3 justify-items-center mb-3" >
+        <div class="">
+            <i id="bold" class="fa-solid fa-bold hover:bg-white p-1 rounded-md "></i>
+            <i id="italic" class="fa-solid fa-italic px-4 hover:bg-white p-1 rounded-md "></i>
+            <i id="underline" class="fa-solid fa-underline hover:bg-white p-1 rounded-md "></i>
+        </div>
+        <div>
+            <i id="align-left" class="fa-solid fa-align-left hover:bg-white p-1 rounded-md "></i>
+            <i id="align-center" class="fa-solid fa-align-center px-4 hover:bg-white p-1 rounded-md " ></i>
+            <i id="align-right" class="fa-solid fa-align-right hover:bg-white p-1 rounded-md "></i>
+            <i id="align-justify" class="fa-solid fa-align-justify px-4 hover:bg-white p-1 rounded-md "></i>
+        </div>
+        <div class="flex justify-center items-center gap-3">
+            <input class="bg-red-400 w-14 rounded-md" type="number" name="" id="text-size">
+            <i class="fa-solid fa-font-case"></i>
+            <input class="" type="color" name="" id="text-color">
+            <i class="fa-solid fa-a hover:bg-white p-1 rounded-md "></i>
+        </div>
+    </section>
+    <div class="flex justify-center">
+        <hr style="width: 75%;height: 5px; background-color: rgb(0, 0, 0);">
+       </div>
+    <section class="w-[75%] mx-auto mt-10 ">
+        <textarea class="w-[100%] h-[80vh] rounded-md p-10"  name="" id="input" cols="30" rows="10"></textarea>
+    </section>
+
+    <script>
+        document.getElementById('bold').addEventListener('click',function(){
+           const input = document.getElementById('input');
+           input.classList.toggle('font-bold')
+        })
+        document.getElementById('italic').addEventListener('click',function(){
+           const input = document.getElementById('input');
+           input.classList.toggle('italic')
+        })
+        document.getElementById('underline').addEventListener('click',function(){
+           const input = document.getElementById('input');
+           input.classList.toggle('underline')
+        })
+        // 
+        document.getElementById('align-left').addEventListener('click',function(){
+           const input = document.getElementById('input');
+           input.style.textAlign = "left";
+        })
+        document.getElementById('align-center').addEventListener('click',function(){
+           const input = document.getElementById('input');
+           input.style.textAlign = "center";
+        })
+        document.getElementById('align-right').addEventListener('click',function(){
+           const input = document.getElementById('input');
+           input.style.textAlign = "right";
+        })
+        document.getElementById('align-justify').addEventListener('click',function(){
+           const input = document.getElementById('input');
+           input.style.textAlign = "justify";
+        })
+
+        // 
+        document.getElementById('text-size').addEventListener('input',function(){
+            const input = document.getElementById('input');
+            const textSize = document.getElementById('text-size').value;
+            const textSizeNumber = parseFloat(textSize)
+            input.style.fontSize = textSizeNumber + 'px';
+        })
+        document.getElementById('text-color').addEventListener('input',function(){
+            const input = document.getElementById('input');
+            const color = document.getElementById('text-color').value;
+            input.style.color = color;
+        })
+    </script>
+</body>
+</html>
